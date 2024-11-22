@@ -7,16 +7,20 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Inicio'),
+        centerTitle: true,
       ),
       body: Center(
-        child: ElevatedButton(
-          child: Text('Crear perfil'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => CreateProfileScreen()), //Aquí voy a crear la otra screen
-            );
-          },
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CreateProfileScreen()),
+              );
+            },
+            child: Text('Crear perfil'),
+          ),
         ),
       ),
     );

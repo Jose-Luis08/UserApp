@@ -15,28 +15,40 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CREAR PERFIL:)'),
+        title: Text('Crear Perfil:)'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: 'nombre'),
+              decoration: InputDecoration(
+                labelText: 'Nombre',
+                border: OutlineInputBorder(),
+              ),
             ),
+            SizedBox(height: 16),
             TextField(
               controller: _ageController,
-              decoration: InputDecoration(labelText: 'edad'),
               keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Edad',
+                border: OutlineInputBorder(),
+              ),
             ),
+            SizedBox(height: 16),
             TextField(
               controller: _occupationController,
-              decoration: InputDecoration(labelText: 'ocupacion'),
+              decoration: InputDecoration(
+                labelText: 'Ocupación',
+                border: OutlineInputBorder(),
+              ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 32),
             ElevatedButton(
-              child: Text('Guardar y ver perfil'),
               onPressed: () {
                 String name = _nameController.text;
                 String age = _ageController.text;
@@ -53,6 +65,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                   ),
                 );
               },
+              child: Text('Guardar y Ver Perfil'),
             ),
           ],
         ),
